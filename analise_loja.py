@@ -1,11 +1,16 @@
 import base_loja
 
-listaVendas = base_loja.vendas["vendas"]
+maior_valor = 0
+total_vendas = 0
 
-print(f"Quantidade de Vendas: {len(listaVendas)}")
+for venda in base_loja.vendas["vendas"]:
+    valor_total = venda["quantidade"]*venda["valor_unitario"]
 
-totalUnidades = 0
-for venda in listaVendas:
-    totalUnidades += venda["quantidade"]
+    if valor_total > maior_valor:
+        maior_valor = valor_total
 
-print(f"Total de Unidades Vendidas: {totalUnidades}")
+    
+        
+print("Maior venda")
+print(f"Valor total: R$ {maior_valor:.2f}")
+
